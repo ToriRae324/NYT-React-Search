@@ -32,7 +32,7 @@ class Home extends Component {
         API.search(this.state.topic, this.state.startYear, this.state.endYear)
     }
 
-    saveArticle = (headline, date, snippet, url) => {
+    saveArticle = (headline, date, snippet, url) =>() => {
         const savedArticle = {
             headline: headline,
             date: date,
@@ -40,7 +40,7 @@ class Home extends Component {
             url: url
         }
         console.log(savedArticle)
-        // DB.save(savedArticle).then( alert("Article Saved"))
+        DB.save(savedArticle).then( alert("Article Saved"))
     }
 
     render() {
@@ -97,7 +97,7 @@ class Home extends Component {
                                     snippet={item.snippet}
                                     headline={item.headline.main}
                                     date={item.pub_date}
-                                    onClick={()=>this.saveArticle}
+                                    saveArticle={this.saveArticle}
                                 />
                             )}
 

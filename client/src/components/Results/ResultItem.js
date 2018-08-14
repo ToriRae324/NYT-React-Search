@@ -10,7 +10,7 @@ const ResultItem = (props) => (
             <p className="card-text">{props.snippet}</p>
             <a href={props.url} className="card-link">Read Article</a>
             <button type="button" class="btn btn-light save-btn" 
-            key={props.headline} onClick={props.onClick(props.headline, props.date, props.snippet, props.url)}>
+            key={props.headline} onClick={props.saveArticle(props.headline, props.date, props.snippet, props.url)}>
             Save For Later
             </button>
 
