@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ArticleSchema = new Schema({
-  title: { 
+  headline: { 
     type: String, 
     required: true 
   },
@@ -11,6 +11,10 @@ const ArticleSchema = new Schema({
     required: true 
   },
   url: {
+    type: String,
+    required: true
+  },
+  snippet: {
     type: String,
     required: true
   }
