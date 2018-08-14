@@ -39,8 +39,8 @@ class Home extends Component {
             snippet: snippet,
             url: url
         }
-        console.log(savedArticle)
         DB.save(savedArticle).then( alert("Article Saved"))
+        .catch(err => console.log(err));
     }
 
     render() {
@@ -97,7 +97,8 @@ class Home extends Component {
                                     snippet={item.snippet}
                                     headline={item.headline.main}
                                     date={item.pub_date}
-                                    saveArticle={this.saveArticle}
+                                    Article={this.saveArticle}
+                                    buttonText="Save for later"
                                 />
                             )}
 

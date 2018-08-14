@@ -10,7 +10,7 @@ const ResultItem = (props) => (
             <p className="card-text">{props.snippet}</p>
             <a href={props.url} className="card-link">Read Article</a>
             <button type="button" class="btn btn-light save-btn" 
-            key={props.headline} onClick={props.Article(props.headline, props.date, props.snippet, props.url)}>
+            key={props._id} onClick={props.Article(props._id)}>
             {props.buttonText}
             </button>
 

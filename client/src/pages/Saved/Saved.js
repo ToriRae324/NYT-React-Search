@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import DB from "../../utils/DB"
-import ResultItem from "../../components/Results"
+import ResultItem from "../../components/Results/ResultItem.1"
 
 class Saved extends Component {
 
@@ -20,12 +20,9 @@ class Saved extends Component {
         this.getArticles();
     }
 
-    componentDidUpdate() {
-        this.getArticles();
-    }
-    deleteArticle = (id) => {
-        alert(`Article Deleted`)
-        DB.delete(id)
+    
+    deleteArticle = (id) =>() => {
+        DB.delete(id).then(()=>this.getArticles())
     }
 
     render() {
@@ -41,12 +38,14 @@ class Saved extends Component {
                             {this.state.articles.map(item =>
 
                                 <ResultItem
-                                    key={item.headline.main}
-                                    url={item.web_url}
+                                    key={item._id}
+                                    _id={item._id}
+                                    url={item.url}
                                     snippet={item.snippet}
-                                    headline={item.headline.main}
-                                    date={item.pub_date}
-                                    onClick={this.deleteArticle}
+                                    headline={item.headline}
+                                    date={item.date}
+                                    Article={this.deleteArticle}
+                                    buttonText="Delete"
                                 />
                             )}
 
