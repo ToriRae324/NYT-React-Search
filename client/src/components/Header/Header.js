@@ -6,16 +6,17 @@ const Header = () => (
     
     <header className="jumbotron header text-center shadow">
     
-        <h1>NYT Article Scrubber</h1>
+        <h1>New York Times Article Finder</h1>
         <h3> Search for and Save Articles</h3>
         <br />
-        <br />
 
-       <Link to="/search"> <button type="button" class="btn btn-light">Search</button>
+       <p><Link to="/search"> <button type="button" class="btn btn-light">Search</button>
         </Link>
+
         <Link to="/saved">
-        <button type="button" class="btn btn-dark">Saved</button>
+        <button type="button" class="btn btn-info">Saved</button>
         </Link>
+        </p>
         
     </header>
 

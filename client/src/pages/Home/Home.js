@@ -57,19 +57,19 @@ class Home extends Component {
                                     value={this.state.topic}
                                     onChange={this.handleInputChange}
                                     name="topic"
-                                    placeholder="Topic (Required)"
+                                    placeholder="Topic *"
                                 />
                                 <FormInput
                                     value={this.state.startYear}
                                     onChange={this.handleInputChange}
                                     name="startYear"
-                                    placeholder="Start Year (YYYY-Required)"
+                                    placeholder="Start Year * (YYYY)"
                                 />
                                 <FormInput
                                     value={this.state.endYear}
                                     onChange={this.handleInputChange}
                                     name="endYear"
-                                    placeholder="End Year (YYYY-Required)"
+                                    placeholder="End Year * (YYYY)"
                                 />
                                 <FormBtn
                                     disabled={!(this.state.topic && this.state.startYear && this.state.endYear)}
